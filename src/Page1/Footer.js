@@ -91,7 +91,6 @@ function Footer() {
                 </label>
                 <textarea
                   id="message"
-                  name="message"
                   rows="4"
                   placeholder="Describe your interest"
                   className="py-2 px-4 w-full bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"

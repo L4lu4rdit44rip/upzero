@@ -2,7 +2,7 @@ import React from "react";
 
 function Portofolio2(props) {
   return (
-    <div className="mx-auto max-w-screen-lg">
+    <div className="mx-5 xl:mx-auto  max-w-screen-lg">
       <div className="flex flex-col md:flex-row px-4 md:px-0 py-5">
       <div className="w-full md:w-2/5 hidden sm:block">
           <img className="w-full md:max-w-full rounded-xl" src={props.src} alt={props.alt} />

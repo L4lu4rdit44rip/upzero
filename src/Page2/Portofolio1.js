@@ -2,7 +2,7 @@ import React from "react";
 
 function Portofolio1(props) {
   return (
-    <div className="mx-auto max-w-screen-lg">
+    <div className="mx-5 xl:mx-auto max-w-screen-lg">
       <div className="flex flex-col md:flex-row px-4 md:px-0 py-5">
         <div className="w-full md:w-3/5">
           <h1 className="font-bold text-xl md:text-2xl mt-4 md:mt-28 pl-5">{props.judul}</h1>

@@ -10,7 +10,7 @@ function PortoPage1() {
   return (
     <div>
       <div
-        className="flex space-x-4 justify-center my-20 py-19 text-center"
+        className="flex space-x-4 justify-center my-20 py-19 text-center "
         id="products"
       >
         <h1 className="font-bold text-blue-400 text-5xl lg:text-6xl ">
@@ -25,7 +25,7 @@ function PortoPage1() {
       <Portofolio1
         src={imgPf}
         alt="Image"
-        judul="classification of monkey pox"
+        judul="Classification of monkey pox"
         desct="Application to differentiate between common smallpox and monkey pox, by utilizing classification of existing data on common small pox and monkey pox."
       />
       <Portofolio2
