@@ -1,18 +1,21 @@
-import React from "react";
-import Footer from "./Footer";
+import TentangKami from "../Page2/TentangKami";
+import Footer from "./Footer2";
 import Header from "./Header";
 import Index from "./Index";
+import Kontak from "./Kontak";
 import PortoPage1 from "./PortoPage1";
 import Services from "./Services";
 
 function Home() {
   return (
-    <div>
+    <div className="pt-28">
       <Header />
       <Index />
+      <TentangKami />
       <Services />
       <PortoPage1 />
-      <Footer/>
+      <Kontak />
+      <Footer />
     </div>
   );
 }

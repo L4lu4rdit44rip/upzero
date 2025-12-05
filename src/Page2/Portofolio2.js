@@ -1,23 +1,50 @@
-import React from "react";
+import { useEffect, useState } from "react";
 
-function Portofolio2(props) {
+function Portofolio2({ src, alt, judul, desct }) {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setVisible(true), 200);
+  }, []);
+
   return (
-    <div className="mx-5 xl:mx-auto  max-w-screen-lg">
-      <div className="flex flex-col md:flex-row px-4 md:px-0 py-5">
-      <div className="w-full md:w-2/5 hidden sm:block">
-          <img className="w-full md:max-w-full rounded-xl" src={props.src} alt={props.alt} />
+    <div
+      className={`mx-5 xl:mx-auto max-w-screen-lg transition-all duration-700 ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
+      <div
+        className="flex flex-col md:flex-row px-4 md:px-0 py-10 
+        bg-white/30 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl 
+        transition-all duration-500 hover:scale-[1.02]"
+      >
+        {/* Desktop Image Left */}
+        <div className="w-full md:w-2/5 hidden md:block">
+          <img
+            className="w-full rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105"
+            src={src}
+            alt={alt}
+          />
         </div>
-        <div className="w-full md:w-3/5">
-          <h1 className="font-bold text-xl md:text-2xl mt-4 md:mt-28 pl-5">{props.judul}</h1>
-          <p className="text-xl md:text-lg my-6 md:my-10 pr-4 md:pr-10 pl-5">{props.desct}</p>
+
+        {/* Text */}
+        <div className="w-full md:w-3/5 p-5">
+          <h1 className="font-bold text-2xl md:text-3xl mt-4">{judul}</h1>
+          <p className="text-lg md:text-xl mt-5 opacity-80 leading-relaxed">
+            {desct}
+          </p>
         </div>
-        <div className="w-full md:w-2/5 sm:hidden">
-          <img className="w-full md:max-w-full rounded-xl" src={props.src} alt={props.alt} />
+
+        {/* Mobile Image Bottom */}
+        <div className="w-full md:w-2/5 block md:hidden mt-5">
+          <img
+            className="w-full rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105"
+            src={src}
+            alt={alt}
+          />
         </div>
-        
       </div>
     </div>
-
   );
 }
 

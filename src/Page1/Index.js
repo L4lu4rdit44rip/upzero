@@ -1,56 +1,96 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import Ba1 from "../Asset/Bacground/bg2.png";
-
 function Index() {
   const [isVisible, setIsVisible] = useState(false);
   const [kata] = useTypewriter({ words: ["UpZero"], loop: {} });
 
   useEffect(() => {
-    setIsVisible(true);
+    const timeout = setTimeout(() => setIsVisible(true), 200);
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
     <div
       id="cover"
-      className="flex flex-col md:flex-row justify-center items-center md:justify-between my-14 mx-4 md:mx-28 space-y-8 md:space-y-0 md:space-x-4 "
+      className="flex flex-col md:flex-row justify-center items-center md:justify-between
+                 my-20 mx-6 md:mx-24 space-y-10 md:space-y-0 md:space-x-10"
     >
-      <div className="md:w-2/5 mt-8 md:mt-0 md:hidden">
-        <img className="animate-pulse mx-auto" src={Ba1} alt="Gambar" />
+      {/* LEFT IMAGE (Mobile First) */}
+      <div
+        className={`md:w-2/5 md:hidden flex justify-center transition-all duration-700
+        ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}
+      >
+        <img
+          className="animate-float w-72 drop-shadow-xl"
+          src={Ba1}
+          alt="Gambar"
+        />
       </div>
-      <div className=" w-full md:w-3/5 mt-5 md:mt-0 md:ml-8">
-        <h1 className={`text-4xl md:text-6xl font-bold ${isVisible ? "translate-y-0" : "translate-y-12 opacity-0"
-          } transition-all duration-700`}>Empower Your Business</h1>
-        <h1 className={`text-4xl md:text-6xl font-bold ${isVisible ? "translate-y-0" : "translate-y-12 opacity-0"
-          } transition-all duration-700 delay-150`}>
-          with
-          <span className="text-5xl md:text-7xl font-bold ml-4 text-slate-400">
-            {" "}
-            {kata}{" "}
+
+      {/* TEXT SECTION */}
+      <div className="w-full md:w-3/5 space-y-4">
+        <h1
+          className={`text-4xl md:text-5xl font-extrabold leading-tight transition-all duration-700 
+          ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          Wujudkan Visi Digital Anda
+        </h1>
+
+        <h1
+          className={`text-3xl md:text-6xl font-extrabold transition-all duration-700 delay-150
+          ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          Bersama
+          <span className="text-slate-400 text-4xl md:text-7xl font-extrabold ml-3">
+            {kata}
           </span>
           <Cursor />
         </h1>
-        <h1 className={`text-lg md:text-xl font-bold mt-5   ${isVisible ? "translate-y-0" : "translate-y-12 opacity-0"
-          } transition-all duration-700 delay-200`}>
-          Let's turn your brilliant idea into more advanced technology together
-        </h1>
-        <Link>
-          <button className="bg-slate-400 text-center mt-8 md:mt-20 px-7 py-2 font-bold rounded-md text-lg md:text-2xl">
-            <Link
-              to="contactUs"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer"
+
+        <p
+          className={`text-lg md:text-xl text-gray-700 font-medium mt-4 transition-all duration-700 delay-300
+          ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          Solusi Pengembangan Web & Aplikasi Profesional untuk Bisnis Modern
+        </p>
+
+        {/* Button */}
+        <div
+          className={`transition-all duration-700 delay-500
+        ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+        >
+          <Link to="kontak" smooth={true} duration={600}>
+            <button
+              className="bg-slate-400 text-white px-8 py-3 rounded-xl text-lg md:text-2xl 
+                         font-bold shadow-md transition-all duration-300 hover:bg-slate-500 
+                         hover:scale-105 active:scale-95"
             >
-              Contact Us
-            </Link>
-          </button>
-        </Link>
+              Mulai Proyek Anda
+            </button>
+          </Link>
+        </div>
       </div>
 
-      <div className="w-full md:w-2/5 mt-8 md:mt-0 hidden md:block">
-        <img className="animate-pulse mx-auto" src={Ba1} alt="Gambar" />
+      {/* RIGHT IMAGE (Desktop Only) */}
+      <div
+        className={`hidden md:flex justify-center md:w-2/5 transition-all duration-700 delay-200
+        ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}
+      >
+        <img
+          className="animate-float w-96 drop-shadow-xl"
+          src={Ba1}
+          alt="Gambar"
+        />
       </div>
     </div>
   );
