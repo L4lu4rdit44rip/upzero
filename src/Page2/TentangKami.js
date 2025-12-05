@@ -9,11 +9,10 @@ const TentangKami = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // Jika terlihat di layar
           if (entry.isIntersecting) {
             setIsVisible(true);
           } else {
-            setIsVisible(false); // Animasi saat keluar
+            setIsVisible(false);
           }
         });
       },
@@ -59,41 +58,63 @@ const TentangKami = () => {
             }
           `}
         >
-          <h2 className="text-3xl font-bold mb-4">Tentang Kami</h2>
-          <p className="text-gray-600 leading-relaxed text-lg">
-            Kami adalah tim profesional yang berdedikasi dalam menciptakan
-            solusi digital inovatif. Dengan pengalaman bertahun-tahun di
-            industri teknologi, kami membantu bisnis bertransformasi melalui
-            website dan aplikasi yang powerful, user-friendly, dan scalable.
+          <h2 className="text-3xl font-bold mb-4">Tentang UPZERO</h2>
+
+          <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+            UPZERO adalah perusahaan teknologi digital yang berfokus pada
+            pengembangan website dan aplikasi modern untuk mendukung percepatan
+            transformasi digital. Kami menghadirkan solusi inovatif yang
+            dirancang untuk meningkatkan efisiensi, produktivitas, serta daya
+            saing bisnis di berbagai sektor.
+            <br />
+            <br />
+            Dengan tim profesional berpengalaman dan standar kerja yang
+            berorientasi pada kualitas, keamanan, dan kemudahan penggunaan,
+            UPZERO berkomitmen memberikan layanan terbaik melalui proses
+            pengembangan yang terstruktur dan hasil produk yang dapat
+            diandalkan.
+            <br />
+            <br />
+            Selama lebih dari dua tahun, kami telah berhasil mengerjakan
+            berbagai proyek strategis dan dipercaya oleh klien dari beragam
+            industri. Kami terus berkembang dan berinovasi untuk menghadirkan
+            solusi digital yang scalable, user-friendly, serta berdampak nyata
+            bagi perkembangan bisnis klien.
           </p>
 
           {/* STATISTICS */}
           <div className="grid grid-cols-3 mt-10 text-center">
             <div
-              className="transition-all duration-1000 delay-500 
-                ${isVisible ? 'opacity-100' : 'opacity-0'}
-              "
+              className={`transition-all duration-1000 delay-500 ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
             >
               <h3 className="text-3xl font-bold">20+</h3>
-              <p className="text-gray-500 mt-1">Proyek Selesai</p>
+              <p className="text-gray-500 mt-1 text-sm md:text-base">
+                Proyek Selesai
+              </p>
             </div>
 
             <div
-              className="transition-all duration-1000 delay-700 
-                ${isVisible ? 'opacity-100' : 'opacity-0'}
-              "
+              className={`transition-all duration-1000 delay-700 ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
             >
               <h3 className="text-3xl font-bold">10+</h3>
-              <p className="text-gray-500 mt-1">Klien Puas</p>
+              <p className="text-gray-500 mt-1 text-sm md:text-base">
+                Klien Puas
+              </p>
             </div>
 
             <div
-              className="transition-all duration-1000 delay-900 
-                ${isVisible ? 'opacity-100' : 'opacity-0'}
-              "
+              className={`transition-all duration-1000 delay-900 ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
             >
               <h3 className="text-3xl font-bold">2+</h3>
-              <p className="text-gray-500 mt-1">Tahun Pengalaman</p>
+              <p className="text-gray-500 mt-1 text-sm md:text-base">
+                Tahun Pengalaman
+              </p>
             </div>
           </div>
         </div>
